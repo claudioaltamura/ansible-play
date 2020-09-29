@@ -1,0 +1,16 @@
+---
+    # example
+- hosts: local
+  connection: local
+  #become: yes
+  #become_user: root
+  vars:
+    - dir: ./test3
+  tasks:
+    - name: Create dir
+      file:
+        path: '{{ dir }}'
+        mode: 0775
+        state: directory
+        owner: altamura
+        #group: altamura
